@@ -17,21 +17,26 @@
     color: @breadcrumb-link-color;
     transition: color 0.3s;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: @breadcrumb-link-color-hover;
     }
   }
 
-  & > span:last-child {
+  .ant-breadcrumb-list-item {
+    display: initial;
+  }
+
+  & > ol .ant-breadcrumb-list-item:last-child {
     color: @breadcrumb-last-item-color;
 
     a {
       color: @breadcrumb-last-item-color;
     }
-  }
 
-  & > span:last-child &-separator {
-    display: none;
+    .@{breadcrumb-prefix-cls}-separator {
+      display: none;
+    }
   }
 
   &-separator {
