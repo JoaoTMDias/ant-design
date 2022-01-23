@@ -12,6 +12,7 @@ export interface BreadcrumbItemProps {
   dropdownProps?: DropDownProps;
   onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLSpanElement>;
   className?: string;
+  current?: boolean;
 }
 interface BreadcrumbItemInterface extends React.FC<BreadcrumbItemProps> {
   __ANT_BREADCRUMB_ITEM: boolean;
@@ -22,10 +23,12 @@ const BreadcrumbItem: BreadcrumbItemInterface = ({
   children,
   overlay,
   dropdownProps,
+  current,
   ...restProps
 }) => {
   const { getPrefixCls } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('breadcrumb', customizePrefixCls);
+  const ariaCurrent = current ? 'page' : undefined;
   /** If overlay is have Wrap a DropDown */
   const renderBreadcrumbNode = (breadcrumbItem: React.ReactNode) => {
     if (overlay) {
@@ -44,13 +47,13 @@ const BreadcrumbItem: BreadcrumbItemInterface = ({
   let link;
   if ('href' in restProps) {
     link = (
-      <a className={`${prefixCls}-link`} {...restProps}>
+      <a className={`${prefixCls}-link`} aria-current={ariaCurrent} {...restProps}>
         {children}
       </a>
     );
   } else {
     link = (
-      <span className={`${prefixCls}-link`} {...restProps}>
+      <span className={`${prefixCls}-link`} aria-current={ariaCurrent} {...restProps}>
         {children}
       </span>
     );
@@ -60,12 +63,14 @@ const BreadcrumbItem: BreadcrumbItemInterface = ({
   link = renderBreadcrumbNode(link);
   if (children) {
     return (
-      <span>
+      <li className="ant-breadcrumb-list-item">
         {link}
         {separator && (
-          <span className={`${prefixCls}-separator`}>{separator}</span>
+          <span className={`${prefixCls}-separator`} aria-hidden>
+            {separator}
+          </span>
         )}
-      </span>
+      </li>
     );
   }
   return null;
