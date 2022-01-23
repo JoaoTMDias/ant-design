@@ -9,7 +9,11 @@ const BreadcrumbSeparator: BreadcrumbSeparatorInterface = ({ children }) => {
   const { getPrefixCls } = React.useContext(ConfigContext);
   const prefixCls = getPrefixCls('breadcrumb');
 
-  return <span className={`${prefixCls}-separator`}>{children || '/'}</span>;
+  return (
+    <span className={`${prefixCls}-separator`} aria-hidden>
+      {children || '/'}
+    </span>
+  );
 };
 
 BreadcrumbSeparator.__ANT_BREADCRUMB_SEPARATOR = true;
