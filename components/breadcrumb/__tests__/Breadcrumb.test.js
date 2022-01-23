@@ -155,4 +155,85 @@ describe('Breadcrumb', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+
+  // https://github.com/ant-design/ant-design/issues/33821
+  it('should render an accessible label by default', () => {
+    const wrapper = mount(
+      <Breadcrumb>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="">Application Center</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="">Application List</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item current>An Application</Breadcrumb.Item>
+      </Breadcrumb>,
+    );
+
+    const element = wrapper.find('nav');
+
+    expect(element.exists()).toBe(true);
+    expect(element.prop('aria-label')).toBe('Breadcrumb');
+  });
+
+  it('should render a custom accessible label', () => {
+    const wrapper = mount(
+      <Breadcrumb aria-label="App Breadcrumb">
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="">Application Center</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="">Application List</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item current>An Application</Breadcrumb.Item>
+      </Breadcrumb>,
+    );
+
+    const element = wrapper.find('nav');
+
+    expect(element.prop('aria-label')).toBe('App Breadcrumb');
+  });
+
+  it('should have the last crumb as the current page link', () => {
+    const wrapper = mount(
+      <Breadcrumb aria-label="App Breadcrumb">
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="">Application Center</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="">Application List</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item current>An Application</Breadcrumb.Item>
+      </Breadcrumb>,
+    );
+
+    const element = wrapper.find('[aria-current="page"]');
+
+    expect(element.text()).toBe('An Application');
+  });
+
+  it('should have remove all separators from the accessibility tree', () => {
+    const wrapper = mount(
+      <Breadcrumb>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Separator>:</Breadcrumb.Separator>
+        <Breadcrumb.Item>
+          <a href="">Application Center</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="">Application List</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item current>An Application</Breadcrumb.Item>
+      </Breadcrumb>,
+    );
+
+    const separators = wrapper.find('.ant-design-separator');
+
+    separators.forEach(separator => {
+      expect(separator.prop('aria-hidden')).toBe(true);
+    });
+  });
 });

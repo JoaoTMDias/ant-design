@@ -658,47 +658,59 @@ exports[`renders ./components/layout/demo/fixed.md extend context correctly 1`] 
     class="ant-layout-content site-layout"
     style="padding:0 50px;margin-top:64px"
   >
-    <div
+    <nav
+      aria-label="Demo links"
       class="ant-breadcrumb"
       style="margin:16px 0"
     >
-      <span>
-        <span
-          class="ant-breadcrumb-link"
+      <ol>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          Home
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
+          <span
+            class="ant-breadcrumb-link"
+          >
+            Home
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          /
-        </span>
-      </span>
-      <span>
-        <span
-          class="ant-breadcrumb-link"
+          <span
+            class="ant-breadcrumb-link"
+          >
+            List
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          List
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
-        >
-          /
-        </span>
-      </span>
-      <span>
-        <span
-          class="ant-breadcrumb-link"
-        >
-          App
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
-        >
-          /
-        </span>
-      </span>
-    </div>
+          <span
+            class="ant-breadcrumb-link"
+          >
+            App
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+      </ol>
+    </nav>
     <div
       class="site-layout-background"
       style="padding:24px;min-height:380px"
@@ -2497,35 +2509,44 @@ exports[`renders ./components/layout/demo/side.md extend context correctly 1`] =
       class="ant-layout-content"
       style="margin:0 16px"
     >
-      <div
+      <nav
+        aria-label="Demo links"
         class="ant-breadcrumb"
         style="margin:16px 0"
       >
-        <span>
-          <span
-            class="ant-breadcrumb-link"
+        <ol>
+          <li
+            class="ant-breadcrumb-list-item"
           >
-            User
-          </span>
-          <span
-            class="ant-breadcrumb-separator"
+            <span
+              class="ant-breadcrumb-link"
+            >
+              User
+            </span>
+            <span
+              aria-hidden="true"
+              class="ant-breadcrumb-separator"
+            >
+              /
+            </span>
+          </li>
+          <li
+            class="ant-breadcrumb-list-item"
           >
-            /
-          </span>
-        </span>
-        <span>
-          <span
-            class="ant-breadcrumb-link"
-          >
-            Bill
-          </span>
-          <span
-            class="ant-breadcrumb-separator"
-          >
-            /
-          </span>
-        </span>
-      </div>
+            <span
+              class="ant-breadcrumb-link"
+            >
+              Bill
+            </span>
+            <span
+              aria-hidden="true"
+              class="ant-breadcrumb-separator"
+            >
+              /
+            </span>
+          </li>
+        </ol>
+      </nav>
       <div
         class="site-layout-background"
         style="padding:24px;min-height:360px"
@@ -3458,47 +3479,59 @@ exports[`renders ./components/layout/demo/top.md extend context correctly 1`] = 
     class="ant-layout-content"
     style="padding:0 50px"
   >
-    <div
+    <nav
+      aria-label="Demo links"
       class="ant-breadcrumb"
       style="margin:16px 0"
     >
-      <span>
-        <span
-          class="ant-breadcrumb-link"
+      <ol>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          Home
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
+          <span
+            class="ant-breadcrumb-link"
+          >
+            Home
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          /
-        </span>
-      </span>
-      <span>
-        <span
-          class="ant-breadcrumb-link"
+          <span
+            class="ant-breadcrumb-link"
+          >
+            List
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          List
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
-        >
-          /
-        </span>
-      </span>
-      <span>
-        <span
-          class="ant-breadcrumb-link"
-        >
-          App
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
-        >
-          /
-        </span>
-      </span>
-    </div>
+          <span
+            class="ant-breadcrumb-link"
+          >
+            App
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+      </ol>
+    </nav>
     <div
       class="site-layout-content"
     >
@@ -3757,47 +3790,59 @@ exports[`renders ./components/layout/demo/top-side.md extend context correctly 1
     class="ant-layout-content"
     style="padding:0 50px"
   >
-    <div
+    <nav
+      aria-label="Demo links"
       class="ant-breadcrumb"
       style="margin:16px 0"
     >
-      <span>
-        <span
-          class="ant-breadcrumb-link"
+      <ol>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          Home
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
+          <span
+            class="ant-breadcrumb-link"
+          >
+            Home
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          /
-        </span>
-      </span>
-      <span>
-        <span
-          class="ant-breadcrumb-link"
+          <span
+            class="ant-breadcrumb-link"
+          >
+            List
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+        <li
+          class="ant-breadcrumb-list-item"
         >
-          List
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
-        >
-          /
-        </span>
-      </span>
-      <span>
-        <span
-          class="ant-breadcrumb-link"
-        >
-          App
-        </span>
-        <span
-          class="ant-breadcrumb-separator"
-        >
-          /
-        </span>
-      </span>
-    </div>
+          <span
+            class="ant-breadcrumb-link"
+          >
+            App
+          </span>
+          <span
+            aria-hidden="true"
+            class="ant-breadcrumb-separator"
+          >
+            /
+          </span>
+        </li>
+      </ol>
+    </nav>
     <section
       class="ant-layout site-layout-background"
       style="padding:24px 0"
@@ -6053,47 +6098,59 @@ exports[`renders ./components/layout/demo/top-side-2.md extend context correctly
       class="ant-layout"
       style="padding:0 24px 24px"
     >
-      <div
+      <nav
+        aria-label="Demo links"
         class="ant-breadcrumb"
         style="margin:16px 0"
       >
-        <span>
-          <span
-            class="ant-breadcrumb-link"
+        <ol>
+          <li
+            class="ant-breadcrumb-list-item"
           >
-            Home
-          </span>
-          <span
-            class="ant-breadcrumb-separator"
+            <span
+              class="ant-breadcrumb-link"
+            >
+              Home
+            </span>
+            <span
+              aria-hidden="true"
+              class="ant-breadcrumb-separator"
+            >
+              /
+            </span>
+          </li>
+          <li
+            class="ant-breadcrumb-list-item"
           >
-            /
-          </span>
-        </span>
-        <span>
-          <span
-            class="ant-breadcrumb-link"
+            <span
+              class="ant-breadcrumb-link"
+            >
+              List
+            </span>
+            <span
+              aria-hidden="true"
+              class="ant-breadcrumb-separator"
+            >
+              /
+            </span>
+          </li>
+          <li
+            class="ant-breadcrumb-list-item"
           >
-            List
-          </span>
-          <span
-            class="ant-breadcrumb-separator"
-          >
-            /
-          </span>
-        </span>
-        <span>
-          <span
-            class="ant-breadcrumb-link"
-          >
-            App
-          </span>
-          <span
-            class="ant-breadcrumb-separator"
-          >
-            /
-          </span>
-        </span>
-      </div>
+            <span
+              class="ant-breadcrumb-link"
+            >
+              App
+            </span>
+            <span
+              aria-hidden="true"
+              class="ant-breadcrumb-separator"
+            >
+              /
+            </span>
+          </li>
+        </ol>
+      </nav>
       <main
         class="ant-layout-content site-layout-background"
         style="padding:24px;margin:0;min-height:280px"
