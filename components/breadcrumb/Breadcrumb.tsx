@@ -26,6 +26,7 @@ export interface BreadcrumbProps {
     paths: Array<string>,
   ) => React.ReactNode;
   style?: React.CSSProperties;
+  'aria-label'?: React.HTMLAttributes<HTMLElement>['aria-label'];
   className?: string;
 }
 
@@ -78,6 +79,7 @@ const Breadcrumb: BreadcrumbInterface = ({
   children,
   itemRender = defaultItemRender,
   params = {},
+  'aria-label': ariaLabel = 'Breadcrumb',
   ...restProps
 }) => {
   const { getPrefixCls, direction } = React.useContext(ConfigContext);
@@ -143,9 +145,9 @@ const Breadcrumb: BreadcrumbInterface = ({
   );
 
   return (
-    <div className={breadcrumbClassName} style={style} {...restProps}>
-      {crumbs}
-    </div>
+    <nav className={breadcrumbClassName} aria-label={ariaLabel} style={style} {...restProps}>
+      <ol>{crumbs}</ol>
+    </nav>
   );
 };
 
