@@ -36,7 +36,7 @@ ReactDOM.render(
       </Menu>
     </Header>
     <Content style={{ padding: '0 50px' }}>
-      <Breadcrumb style={{ margin: '16px 0' }}>
+      <Breadcrumb style={{ margin: '16px 0' }} aria-label="Demo links">
         <Breadcrumb.Item>Home</Breadcrumb.Item>
         <Breadcrumb.Item>List</Breadcrumb.Item>
         <Breadcrumb.Item>App</Breadcrumb.Item>

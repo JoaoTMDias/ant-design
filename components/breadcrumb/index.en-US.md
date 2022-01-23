@@ -23,6 +23,7 @@ A breadcrumb displays the current location within a hierarchy. It allows going b
 | params | Routing parameters | object | - |  |
 | routes | The routing stack information of router | [routes\[\]](#routes) | - |  |
 | separator | Custom separator | ReactNode | `/` |  |
+| aria-label | Accessible label that describes the type of navigation provided in the `nav` element. | string | `"Breadcrumb"` |  |
 
 ### Breadcrumb.Item
 
@@ -33,12 +34,13 @@ A breadcrumb displays the current location within a hierarchy. It allows going b
 | href | Target of hyperlink | string | - |  |
 | overlay | The dropdown menu | [Menu](/components/menu) \| () => Menu | - |  |
 | onClick | Set the handler to handle click event | (e:MouseEvent) => void | - |  |
+| current | When true, applies an `aria-current="page"` attribute to the last item in the set to indicate that it represents the current page. | boolean | - |  |
 
 ### Breadcrumb.Separator
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| children | Custom separator | ReactNode | `/` |  |
+| Property | Description      | Type      | Default | Version |
+| -------- | ---------------- | --------- | ------- | ------- |
+| children | Custom separator | ReactNode | `/`     |         |
 
 > When using `Breadcrumb.Separator`,its parent component must be set to `separator=""`, otherwise the default separator of the parent component will appear.
 
@@ -93,11 +95,17 @@ const routes = [
 function itemRender(route, params, routes, paths) {
   const last = routes.indexOf(route) === routes.length - 1;
   return last ? (
-    <span>{route.breadcrumbName}</span>
+    <span aria-current="page">{route.breadcrumbName}</span>
   ) : (
     <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
   );
 }
 
-return <Breadcrumb itemRender={itemRender} routes={routes} />;
+return (
+  <Breadcrumb
+    itemRender={itemRender}
+    routes={routes}
+    aria-label="Breadcrumb usage with browser history"
+  />
+);
 ```

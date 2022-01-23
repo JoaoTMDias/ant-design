@@ -18,7 +18,7 @@ import { Breadcrumb } from 'antd';
 import { HomeOutlined, UserOutlined } from '@ant-design/icons';
 
 ReactDOM.render(
-  <Breadcrumb>
+  <Breadcrumb aria-label="Breadcrumbs with an icon">
     <Breadcrumb.Item href="">
       <HomeOutlined />
     </Breadcrumb.Item>
@@ -26,7 +26,7 @@ ReactDOM.render(
       <UserOutlined />
       <span>Application List</span>
     </Breadcrumb.Item>
-    <Breadcrumb.Item>Application</Breadcrumb.Item>
+    <Breadcrumb.Item current>Application</Breadcrumb.Item>
   </Breadcrumb>,
   mountNode,
 );

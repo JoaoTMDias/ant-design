@@ -17,7 +17,7 @@ The simplest use.
 import { Breadcrumb } from 'antd';
 
 ReactDOM.render(
-  <Breadcrumb>
+  <Breadcrumb aria-label="Basic usage breadcrumbs">
     <Breadcrumb.Item>Home</Breadcrumb.Item>
     <Breadcrumb.Item>
       <a href="">Application Center</a>
@@ -25,7 +25,7 @@ ReactDOM.render(
     <Breadcrumb.Item>
       <a href="">Application List</a>
     </Breadcrumb.Item>
-    <Breadcrumb.Item>An Application</Breadcrumb.Item>
+    <Breadcrumb.Item current>An Application</Breadcrumb.Item>
   </Breadcrumb>,
   mountNode,
 );
