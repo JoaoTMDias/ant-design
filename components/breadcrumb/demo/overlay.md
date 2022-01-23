@@ -37,7 +37,7 @@ const menu = (
 );
 
 ReactDOM.render(
-  <Breadcrumb>
+  <Breadcrumb aria-label="Breadcrumbs with dropdown menu">
     <Breadcrumb.Item>Ant Design</Breadcrumb.Item>
     <Breadcrumb.Item>
       <a href="">Component</a>
@@ -45,7 +45,7 @@ ReactDOM.render(
     <Breadcrumb.Item overlay={menu}>
       <a href="">General</a>
     </Breadcrumb.Item>
-    <Breadcrumb.Item>Button</Breadcrumb.Item>
+    <Breadcrumb.Item current>Button</Breadcrumb.Item>
   </Breadcrumb>,
   mountNode,
 );

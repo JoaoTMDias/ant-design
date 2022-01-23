@@ -17,14 +17,14 @@ The separator can be customized by setting the separator property: `Breadcrumb.S
 import { Breadcrumb } from 'antd';
 
 ReactDOM.render(
-  <Breadcrumb separator="">
+  <Breadcrumb separator="" aria-label="Breadcrumbs with configured separator">
     <Breadcrumb.Item>Location</Breadcrumb.Item>
     <Breadcrumb.Separator>:</Breadcrumb.Separator>
     <Breadcrumb.Item href="">Application Center</Breadcrumb.Item>
     <Breadcrumb.Separator />
     <Breadcrumb.Item href="">Application List</Breadcrumb.Item>
     <Breadcrumb.Separator />
-    <Breadcrumb.Item>An Application</Breadcrumb.Item>
+    <Breadcrumb.Item current>An Application</Breadcrumb.Item>
   </Breadcrumb>,
   mountNode,
 );

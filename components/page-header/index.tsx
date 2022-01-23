@@ -55,7 +55,9 @@ const renderBack = (
   );
 };
 
-const renderBreadcrumb = (breadcrumb: BreadcrumbProps) => <Breadcrumb {...breadcrumb} />;
+const renderBreadcrumb = (breadcrumb: BreadcrumbProps) => (
+  <Breadcrumb {...breadcrumb} aria-label="Page Header breadcrumbs" />
+);
 
 const getBackIcon = (props: PageHeaderProps, direction: DirectionType = 'ltr') => {
   if (props.backIcon !== undefined) {

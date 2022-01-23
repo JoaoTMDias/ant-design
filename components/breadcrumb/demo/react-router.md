@@ -42,9 +42,13 @@ const Home = props => {
   const pathSnippets = location.pathname.split('/').filter(i => i);
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
     const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
+    const isLast = index === pathSnippets.length - 1;
+    const ariaCurrent = isLast ? 'page' : undefined;
     return (
       <Breadcrumb.Item key={url}>
-        <Link to={url}>{breadcrumbNameMap[url]}</Link>
+        <Link to={url} aria-current={ariaCurrent}>
+          {breadcrumbNameMap[url]}
+        </Link>
       </Breadcrumb.Item>
     );
   });
@@ -64,7 +68,7 @@ const Home = props => {
         <Route path="*" element={<span>Home Page</span>} />
       </Routes>
       <Alert style={{ margin: '16px 0' }} message="Click the navigation above to switch:" />
-      <Breadcrumb>{breadcrumbItems}</Breadcrumb>
+      <Breadcrumb aria-label="Breadcrumbs with router integration">{breadcrumbItems}</Breadcrumb>
     </div>
   );
 };
